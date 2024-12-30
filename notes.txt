@@ -1,0 +1,312 @@
+
+big int:-
+ a=  12323456789n
+ a= bigint{23456789}
+9
+ object:- 
+ let student ={
+    name : "sankhar",
+    age : 21;
+    address : 
+ }
+ console.log(student);
+
+NESTED object :-
+ let student ={
+    name : ["sankhar","madhu"],
+    age : 21,
+    address : {
+        state:"tn",
+        city:"chennai"
+    },
+    hellow : function() {
+        console.log("hi students")
+    }
+ }
+ console.log (student.name[1]);
+ console.log (student["name"]);
+
+let student = new Object();
+ student.name = "sankhar";
+ student.age = 20;
+ student.hellow = function(){
+    console.log("hi students");
+ }
+
+ console.log(student);
+
+ short circuit operators:-
+ logical AND &&
+ logical OR ||  
+
+ pre increment
+ let a = 5;
+ console.log(a++);//post increment 
+ console.log(++a);//pre increment
+
+ a=5 
+ b=a++ + --a //b=10+1+1
+ c=++b + b++ //c=11 + 11
+ a++ //a=5+1-1+1
+
+ let a = true
+ a=!!!!!!a;
+ console.log(a)
+
+ let a=6
+if (a%3==0){
+    console.log("Hi")
+}
+else if (a%5==0) {
+    console.log("Hello")
+}
+else if (a%3==0 && a%5==0)
+{
+    console.log("Hi Hello")
+} 
+
+let choice = "hi everyone";
+switch (choice) {
+    case "hi everyone":
+        console.log("hi")
+        
+    
+    case "hi":
+        console.log("welcome")
+        break;
+
+    case "everone":
+        console.log("hello")
+        break;
+}//o/p hi welcome
+
+if { } was not given in the if condition will only consider the first as its statemnt second line will be consider as out of the if statemnt
+
+for(;;){//if ;; is give it alwas consider as true and run the loop for infine  times 
+   console.log("hi")
+}
+
+let a=1
+for(console.log("a");a<=;console.log("b")){
+   console.log("c");
+   a++;
+}
+o/p 
+a
+variable.js:2
+c
+variable.js:3
+b
+variable.js:2
+c
+variable.js:3
+b
+variable.js:2
+c
+variable.js:3
+b
+
+intialization->condition->statemnt->increment->condition->statemnt->increment->condition->statemnt->increment->
+
+for (var a=1;a<100;a++); //as ; the for loop was terminated if not given for loop consider the next line as for statemnt
+console.log("hi")
+console.log(a);
+ o/p hi 100
+
+ let a=1
+ while(a<=10)
+ {
+   console.log(a);
+ }
+   
+
+for and while are entery check loop 
+dowhile loop are exit check loop
+
+ do {
+   console.log(a);")
+ }while (a<=10)
+
+ function
+// non parameterizes + without return
+function apple()
+{
+   consolw.log("apple")
+}
+apple();
+
+// non parameterizes + with return
+function orange ()
+{
+   return "Banana"
+}
+console.log(orange());
+
+// let a="mango"
+function mango(a){
+    console.log(a);
+}
+mango("mango");
+
+arrow function 
+
+let apple = () => {
+   console.log(a);
+}
+apple()
+
+let Banana = () =>
+{
+   console.log("masa");
+   return 3+3;
+}
+
+let berry = (a) =>
+{
+  console.log(a)
+}
+berry("blueberry")
+ 
+//spred operators
+let a= [1,2,3,4]
+let x= [5,6,7,8]
+let b=[...a,...x]
+console.log(b(2))
+
+let spred = () =>
+{
+  console.log(values);
+}
+spred(...b)
+
+let student = {
+    name : "sankhar",
+    age : 21
+ }
+
+ let b={...student}
+
+ console.log(b);
+
+//rest operators
+function spred(...values)
+{
+   console.log(values);
+}
+spred(1,2,3,4)
+o/p 1,2,3,4
+
+function spred(x,...values)
+{
+   console.log(x);
+   console.log(values);
+}
+spred(1,2,3,4)
+
+o/p
+1
+2,3,4
+
+//destructuring operator
+let a = [1,2,3,4,5,6];
+let [b,c,x,...y]=a;
+console.log(y)
+
+//call back 
+function dog (callback) {
+    
+    setTimeout(()=>{
+        console.log("JACK the dog")
+        callback()
+    },2000);
+}
+function cat ()
+{
+    console.log("ROSE the cat")
+}
+dog(cat)
+
+o/p -> JACK the dog
+ROSE the cat
+
+//call back hell
+function FileProcessing (callback) {
+    
+        console.log("File is processing")
+        callback()
+}
+
+function FileDownloading (callback) {
+    
+    setTimeout(()=>{
+        console.log("File is downloading")
+        callback()
+    },2000);
+}
+
+function FileDownloaded(callback) {
+    
+        console.log("File was Downloaded")
+        callback()
+
+}
+
+FileProcessing(()=>{
+    FileDownloading(()=>{
+        FileDownloaded(()=>{
+            console.log("File completed")
+        })
+    })
+})
+
+function FileProcessing(callback) {
+    console.log("File is processing");
+    callback();
+}
+
+function FileDownloading(callback) {
+    setTimeout(function() {
+        console.log("File is downloading");
+        callback();
+    }, 2000);
+}
+
+function FileDownloaded(callback) {
+    console.log("File was Downloaded");
+    callback();
+}
+
+FileProcessing(function() {
+    FileDownloading(function() {
+        FileDownloaded(function() {
+            console.log("File completed");
+        });
+    });
+});
+
+//promise
+//async and await
+
+//promise
+function brain (){
+    return new Promise((res,rej)=>{
+        res("Brain active")
+        //rej("Brain dead")
+    })
+}
+
+brain().then(output=>console.log(output))
+
+function brain (){
+    return new Promise((res,rej)=>{
+        //res("Brain active")
+        rej("Brain dead")
+    })
+}
+
+brain().then(output=>console.log(output))
+    .catch(output=>console.error(output))
+
+what is react 
+is react is single page 
+
